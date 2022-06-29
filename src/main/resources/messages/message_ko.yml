@@ -1,0 +1,18 @@
+# 다국어 메세지 처리를 위한 YML 파일
+
+# Result Class 메시징 처리
+result:
+  success:
+    code: "000"
+    msg: "성공"
+  fail:
+    code: "999"
+    msg: "실패"
+
+exception:
+  msg:
+    duplicate-review-id: "이미 등록된 reviewId 입니다."
+    only-one-user-place: "동일한 장소에는 1개의 리뷰만 등록할 수 있습니다."
+    mod-only-writer: "작성자만 수정할 수 있습니다."
+    delete-only-writer: "작성자만 삭제할 수 있습니다."
+    not-registered-review-id: "등록되지 않은 reviewId 입니다."

@@ -1,0 +1,28 @@
+
+# Spring설정
+spring:
+  # 기본적으로 내장된 임베디드 데이터베이스를 사용합니다. replace.none으로 설정하면 설정한 프로파일 환경값에 따라 데이터 소스가 적용됩니다.
+  test:
+    database:
+      replace: none
+  # mockMvcResponse에서 한글이 깨짐현상을 위한 조치
+  servlet:
+    encoding:
+      force-response: true
+  datasource: # DB설정
+    url: jdbc:h2:mem:mileage;MODE=MySQL;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:  # JPA설정
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: false
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema-test.sql
